@@ -36,6 +36,41 @@
         }
 
         /* Cabecera */
+
+        /* Nueva estructura para la cabecera con foto */
+        .header-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 150px; /* Texto a la izquierda (1 fr) y foto a la derecha (150px) */
+            gap: 3rem; /* Espacio entre el texto y la foto */
+            align-items: center; /* Alineación vertical centrada */
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Hace la foto circular */
+            border: 1px solid var(--border-color); /* Borde fino para integrarse con el diseño */
+            overflow: hidden; /* Asegura que la imagen no se salga del círculo */
+        }        
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen dentro del círculo sin deformarla */
+        }
+
+        /* Responsivo: Si la pantalla es pequeña, la foto se pondrá arriba del texto */
+        @media (max-width: 600px) {
+            .header-wrapper {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-photo {
+                justify-self: center; /* Centra la foto en móviles */
+            }
+        }
+        
         header {
             padding: 6rem 0 4rem;
             border-bottom: 1px solid var(--border-color);
