@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio de Informática | Proyectos</title>
     <style>
-        /* Paleta de colores minimalista y líneas limpias */
+        /* 1. Paleta de colores minimalista y generales */
         :root {
-            --bg-color: #fbfbfb;      /* Blanco roto / Off-white */
+            --bg-color: #fbfbfb;
             --surface: #ffffff;
             --text-primary: #222222;
             --text-secondary: #666666;
@@ -28,53 +28,24 @@
             line-height: 1.6;
         }
 
-        /* Contenedor principal */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* Cabecera */
-
-        /* Nueva estructura para la cabecera con foto */
-        .header-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 150px; /* Texto a la izquierda (1 fr) y foto a la derecha (150px) */
-            gap: 3rem; /* Espacio entre el texto y la foto */
-            align-items: center; /* Alineación vertical centrada */
-        }
-
-        .profile-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%; /* Hace la foto circular */
-            border: 1px solid var(--border-color); /* Borde fino para integrarse con el diseño */
-            overflow: hidden; /* Asegura que la imagen no se salga del círculo */
-        }        
-
-        .profile-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ajusta la imagen dentro del círculo sin deformarla */
-        }
-
-        /* Responsivo: Si la pantalla es pequeña, la foto se pondrá arriba del texto */
-        @media (max-width: 600px) {
-            .header-wrapper {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .profile-photo {
-                justify-self: center; /* Centra la foto en móviles */
-            }
-        }
-        
+        /* 2. Cabecera, Foto y Botón CV */
         header {
             padding: 6rem 0 4rem;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 4rem;
+        }
+
+        .header-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 150px;
+            gap: 3rem;
+            align-items: center;
         }
 
         header h1 {
@@ -90,7 +61,52 @@
             max-width: 600px;
         }
 
-        /* Sección de Proyectos (Geometría limpia) */
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cv-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.5rem 1.25rem;
+            border: 1px solid var(--text-primary);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .cv-button:hover {
+            background-color: var(--text-primary);
+            color: var(--surface);
+        }
+
+        /* Responsivo para la cabecera en móviles */
+        @media (max-width: 600px) {
+            .header-wrapper {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .profile-photo {
+                justify-self: center;
+            }
+            header p {
+                margin: 0 auto;
+            }
+        }
+
+        /* 3. Sección de Proyectos */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -150,7 +166,7 @@
             align-self: flex-start;
         }
 
-        /* Pie de página */
+        /* 4. Pie de página */
         footer {
             padding: 3rem 0;
             border-top: 1px solid var(--border-color);
@@ -166,41 +182,25 @@
             text-decoration: none;
             margin-left: 1rem;
         }
-       .cv-button {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.5rem 1.25rem;
-            border: 1px solid var(--text-primary);
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .cv-button:hover {
-            background-color: var(--text-primary);
-            color: var(--surface);
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Presentación -->
+        <!-- Presentación y Foto -->
         <header>
-            <h1>Hola, soy Angelina Vytvytska Dybach</h1>
-            <p>Estudiante de matemáticas e informática. Esta es mi web y aquí podrás ver todos los proyectos que estoy realizando 
-              y así podrás conocer mas de cerca todo mi trabajo de primera mano </p>
-          <!-- Botón del currículum -->
-            <a href="curriculum.pdf" target="_blank" class="cv-button">Ver Currículum</a>
-            <!-- Contenedor para la foto de la derecha -->
-        <div class="profile-photo">
-            <!-- Asegúrate de que el nombre del archivo coincida -->
-            <img src="mifoto.jpeg" alt="Foto de perfil de Angelina Vytvytska Dybach">
-        </div>
-
-    </div>
+            <div class="header-wrapper">
+                <div class="header-text">
+                    <h1>Hola, soy Angelina Vytvytska Dybach</h1>
+                    <p>Estudiante de Matemáticas e Ingeniería Informática. Especializado en el desarrollo de software eficiente y análisis de datos.</p>
+                    <!-- Asegúrate de que el nombre del PDF coincida con el que subiste -->
+                    <a href="curriculum.pdf" target="_blank" class="cv-button">Ver Currículum</a>
+                </div>
+                <div class="profile-photo">
+                    <!-- Asegúrate de que el nombre de la foto coincida con la que subiste -->
+                    <img src="mifoto.jpeg" alt="Foto de perfil">
+                </div>
+            </div>
         </header>
 
         <!-- Listado de Proyectos -->
@@ -211,36 +211,36 @@
                 
                 <!-- Proyecto 1 -->
                 <article class="project-card">
-                    <h3 class="project-title">Sistema de Gestión Concurrente</h3>
-                    <p class="project-desc">Implementación de un modelo de lectores-escritores utilizando monitores y semáforos para evitar deadlocks.</p>
+                    <h3 class="project-title">Proyecto 1</h3>
+                    <p class="project-desc">Bla bla .</p>
                     <div class="project-tech">
                         <span class="tech-tag">Java</span>
-                        <span class="tech-tag">Concurrency</span>
+                        <span class="tech-tag">Concurrencia</span>
                     </div>
-                    <a href="#" class="project-link">Ver en GitHub →</a>
+                    <a href="#" target="_blank" class="project-link">Ver en GitHub →</a>
                 </article>
 
                 <!-- Proyecto 2 -->
                 <article class="project-card">
-                    <h3 class="project-title">Resolutor Simbólico</h3>
-                    <p class="project-desc">Script para calcular y graficar transformadas de Laplace y retratos de fase en ecuaciones diferenciales.</p>
+                    <h3 class="project-title">Proyecto 2</h3>
+                    <p class="project-desc">bla bla</p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">SymPy</span>
                         <span class="tech-tag">Matplotlib</span>
                     </div>
-                    <a href="#" class="project-link">Ver código →</a>
+                    <a href="#" target="_blank" class="project-link">Ver en GitHub →</a>
                 </article>
 
                 <!-- Proyecto 3 -->
                 <article class="project-card">
-                    <h3 class="project-title">Simulador RISC-V</h3>
-                    <p class="project-desc">Diseño a bajo nivel de ciclos de instrucción y manejo de interrupciones mediante controladores DMA.</p>
+                    <h3 class="project-title">Proyecto 3</h3>
+                    <p class="project-desc">Bla bla</p>
                     <div class="project-tech">
                         <span class="tech-tag">Assembly</span>
-                        <span class="tech-tag">C</span>
+                        <span class="tech-tag">Arquitectura</span>
                     </div>
-                    <a href="#" class="project-link">Detalles →</a>
+                    <a href="#" target="_blank" class="project-link">Ver en GitHub →</a>
                 </article>
 
             </div>
@@ -250,7 +250,8 @@
         <footer>
             <p>&copy; 2026 Angelina Vytvytska Dybach.</p>
             <div>
-                <a href="mailto:angvd11@ejemplo.com">Email</a>
+                <a href="mailto:angvd11@gmail.com">Email</a>
+                <a href="https://github.com/angvd" target="_blank">GitHub</a>
                 <a href="www.linkedin.com/in/angelina-vytvytska-dybach-493aa8380" target="_blank">LinkedIn</a>
             </div>
         </footer>
